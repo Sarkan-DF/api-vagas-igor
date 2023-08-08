@@ -31,6 +31,8 @@ export class JobApplicationEntity {
   @UpdateDateColumn({ name: "updated_at" })
   updatedAt: Date;
 
+  // RELATIONS
+
   @ManyToOne(() => UserEntity, (entity) => entity.jobApplication)
   @JoinColumn({ name: "id_candidate", referencedColumnName: "id" })
   candidate: UserEntity;

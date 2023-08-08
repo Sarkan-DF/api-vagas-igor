@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import { HttpResponse } from "../../../shared/util/http-response.adapter";
-import { CreateRecruiterUsecase } from "../usecase/create-recruiter.usecase";
-import { ListRecruitersUsecase } from "../usecase/list-recruiters.usecase";
+import { CreateRecruiterUsecase } from "../usecases/create-recruiter.usecase";
+import { HttpResponse } from "../../../shared/util";
+import { ListRecruitersUsecase } from "../usecases/list-recruiters.usecase";
 
 export class RecruiterController {
   public async create(req: Request, res: Response) {

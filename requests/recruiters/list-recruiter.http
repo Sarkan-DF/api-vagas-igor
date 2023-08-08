@@ -1,0 +1,5 @@
+@HOST = http://localhost:8081
+
+GET {{HOST}}/recruiter HTTP/1.1
+Content-Type: application/json 
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE5NTJlMmU0LTAyZjYtNGVhYi04OWNmLTljNWRkNGZiZWQyNyIsIm5hbWUiOiJJZ29yIE1hdG9zIiwiZW1haWwiOiJpZ29ybWF0b3NAZ21haWwuY29tIiwidHlwZSI6IlIiLCJlbnRlcnByaXNlTmFtZSI6Ikdyb3dEZXYiLCJpYXQiOjE2OTE1MDM1MzN9.OIYUD4-zK1qYWAYVNi_K2qf2F4hrgnZXLddfQL2aoek

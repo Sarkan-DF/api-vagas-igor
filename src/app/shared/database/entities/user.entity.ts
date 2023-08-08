@@ -6,9 +6,15 @@ import {
   PrimaryColumn,
   UpdateDateColumn,
 } from "typeorm";
-import { JobEntity } from "./job.entity";
-import { JobApplicationEntity } from "./job-applicatio.entity";
 import { UserType } from "../../../models/user-type.model";
+import { JobApplicationEntity } from "./job-application.entity";
+import { JobEntity } from "./job.entity";
+
+// _name: string,
+//  _email: string,
+//  _password: string,
+//  _type: UserType,
+//  _enterpriseName?: string
 
 @Entity("users")
 export class UserEntity {
@@ -35,6 +41,8 @@ export class UserEntity {
 
   @UpdateDateColumn({ name: "updated_at" })
   updatedAt: Date;
+
+  // RELATIONS
 
   @OneToMany(() => JobEntity, (entity) => entity.recruiter)
   job: JobEntity[];

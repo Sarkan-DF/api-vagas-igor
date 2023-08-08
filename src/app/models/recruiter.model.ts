@@ -8,6 +8,6 @@ export class Recruiter extends User {
     _password: string,
     _enterpriseName: string
   ) {
-    super(_email, _email, _password, UserType.Recrute, _enterpriseName);
+    super(_name, _email, _password, UserType.Recruiter, _enterpriseName);
   }
 }

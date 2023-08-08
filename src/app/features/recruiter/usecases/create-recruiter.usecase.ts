@@ -1,7 +1,6 @@
 import { Recruiter } from "../../../models/recruiter.model";
-import { Result } from "../../../shared/util/result.contract";
-import { Usecase } from "../../../shared/util/usecase.contract";
-import { UserRepository } from "../../user/repositories/user.repositer";
+import { Result, Usecase } from "../../../shared/util";
+import { UserRepository } from "../../user/repositories/user.repository";
 
 interface CreateRecruiterParams {
   name: string;

@@ -5,13 +5,11 @@ dotenv.config();
 
 export default new DataSource({
   type: "postgres",
-  port: 8081,
-  username: process.env.BD_USER,
-  password: process.env.BD_PASS,
+  username: process.env.DB_USER,
+  password: process.env.DB_PASS,
   database: process.env.DB_NAME,
   host: process.env.DB_HOST,
-  url: process.env.DB_URL,
-
+  port: 5432,
   ssl: {
     rejectUnauthorized: false,
   },

@@ -14,6 +14,14 @@ export class UserRepository {
     return UserRepository.mapRowToModel(result);
   }
 
+  public async getById(id: string): Promise<User | undefined> {
+    const result = await this.repository.findOneBy({
+      id,
+    });
+
+    return UserRepository.mapRowToModel(result);
+  }
+
   public async create(user: User) {
     const entity = this.repository.create({
       id: user.id,

@@ -2,9 +2,9 @@ import { Router } from "express";
 import { LoginController } from "../controllers/login.controller";
 
 export const loginRoutes = () => {
-  const app = Router();
+    const app = Router();
 
-  app.post("/", new LoginController().login);
+    app.post("/", new LoginController().login);
 
-  return app;
+    return app;
 };

@@ -8,8 +8,8 @@ import {
   PrimaryColumn,
   UpdateDateColumn,
 } from "typeorm";
+import { JobApplicationEntity } from "./job-application.entity";
 import { UserEntity } from "./user.entity";
-import { JobApplicationEntity } from "./job-applicatio.entity";
 
 @Entity("jobs")
 export class JobEntity {
@@ -39,6 +39,8 @@ export class JobEntity {
 
   @UpdateDateColumn({ name: "updated_at" })
   updatedAt: Date;
+
+  // RELATIONS
 
   @ManyToOne(() => UserEntity, (entity) => entity.job)
   @JoinColumn({ name: "id_recruiter", referencedColumnName: "id" })
