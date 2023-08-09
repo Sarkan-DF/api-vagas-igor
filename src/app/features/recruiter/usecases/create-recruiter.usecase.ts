@@ -1,3 +1,4 @@
+import { CacheRepository } from "../../../../main/database/repositoies/cache.repository";
 import { Recruiter } from "../../../models/recruiter.model";
 import { Result, Usecase } from "../../../shared/util";
 import { UserRepository } from "../../user/repositories/user.repository";
@@ -34,6 +35,9 @@ export class CreateRecruiterUsecase implements Usecase {
       params.enterpriseName
     );
     await repository.create(recruiter);
+
+    const cacheRepository = new CacheRepository();
+    await cacheRepository.delete("recruiters");
 
     return {
       ok: true,

@@ -1,3 +1,4 @@
+import { CacheRepository } from "../../../../main/database/repositoies/cache.repository";
 import { UserType } from "../../../models/user-type.model";
 import { User } from "../../../models/user.model";
 import { Result, Usecase } from "../../../shared/util";
@@ -36,6 +37,9 @@ export class CreateCandidateUsecase implements Usecase {
 
     // 5 - Chama o respository para salva o cara no banco OK
     await repository.create(candidate);
+
+    const cacheRepository = new CacheRepository();
+    await cacheRepository.delete("candidates");
 
     // 6 - Retorna o formato da resposta OK
     return {
